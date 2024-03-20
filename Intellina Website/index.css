@@ -109,6 +109,21 @@ a {
     color: black;
 }
 
+a.tech-learn-more-links {
+  color: inherit;
+  font: inherit;
+}
+
+a.non-tech-learn-more-links {
+  color: inherit;
+  font: inherit;
+}
+
+a.fun-learn-more-links {
+  color: inherit;
+  font: inherit;
+}
+
 h2.category-header {
     font-size: 40px;
 }
@@ -133,6 +148,20 @@ h3.event-title {
 
 div.tech-event-container {
   background: url("./images/techBgs/temp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+div.non-tech-event-container {
+  background: url("./images/nonTechBgs/temp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+div.fun-event-container {
+  background: url("./images/funBgs/temp.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
