@@ -1,6 +1,8 @@
 * {
     font-family: "Quicksand", sans-serif, monospace;
     font-variant: small-caps;
+    box-sizing: border-box;
+    margin: 5px;
 }
 
 body {
@@ -9,6 +11,9 @@ body {
     justify-content: center;
     text-align: center;
     margin: 5px;
+    display: inline-table;
+    background-color: #030637;
+    color: #fb2576;
 }
 
 header {
@@ -20,7 +25,7 @@ header {
     background-size: cover;
     background-position: center;
     text-align: center;
-    border-image: linear-gradient(#5d8bf4, #051367) 30;
+    border-image: linear-gradient(to bottom right, #720455, #3c0753) 30;
     border-width: 4px;
     border-style: solid;
     animation: fadeIn 500ms;
@@ -38,7 +43,6 @@ header {
 #event-main-title {
     font-size: 10vh;
     width: 100%;
-    color: bisque;
     position: absolute;
     top: 35%;
     transition: ease-in 500ms;
@@ -49,7 +53,6 @@ header {
 #event-main-disc {
     font-size: 3vh;
     width: 100%;
-    text-shadow: white;
     position: absolute;
     top: 50%;
     transition: ease-in 700ms;
@@ -61,6 +64,7 @@ nav {
     position: relative;
     width: 100%;
     top: 30%;
+    color: inherit;
     justify-content: space-evenly;
     text-shadow: 0 0 7px #ffffff, 0 0 7px #ffffff;
 }
@@ -69,17 +73,20 @@ button.dropbtn {
     border: none;
     background: none;
     font-size: large;
+    color: inherit;
 }
 
 button.dropbtn:hover {
     background-image: linear-gradient(to bottom right, orange, white, green);
     transition-duration: 300ms;
     border-radius: 20px;
+    color: inherit;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
+    color: inherit;
 }
 
 .dropdown-content {
@@ -91,16 +98,19 @@ button.dropbtn:hover {
     border-radius: 5px;
     background-color: rgba(224, 231, 160, 0.541);
     box-shadow: 0 2px 5px rgba(219, 243, 5, 0.808);
+    color: inherit;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
     align-items: center;
+    margin: 3px;
+    padding: 3px;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 
 a.tech-learn-more-links {
@@ -162,10 +172,16 @@ section {
     justify-content: center;
     text-align: center;
     width: minmax(100px, 40%);
+    border-width: 3px;
+    border-style: ridge;
+    border-color: #3c0753;
 }
 
 div.sections-group {
-    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h2.category-header {
@@ -173,10 +189,22 @@ h2.category-header {
 }
 
 div.event-container {
-    border-image: linear-gradient(#051367, #5d8bf4) 30;
     border-width: 2px;
     border-style: solid;
-    display: hidden;
+    justify-content: stretch;
+    display: visible;
+    width: 400px;
+    height: 300px;
+}
+
+div.event-subcontainer {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    justify-content: stretch;
+    text-align: center;
+    padding-top: 40%;
+    color: cyan;
 }
 
 h3.event-title {
@@ -187,6 +215,7 @@ div.tech-event-container {
     background: url("./images/techBgs/temp.png");
     background-repeat: no-repeat;
     background-size: cover;
+    color: inherit;
     background-position: center;
     overflow: hidden;
     margin: 5px;
@@ -221,15 +250,27 @@ div.tech-event-content-slider:nth-child(1) {
 }
 
 div.tech-event-subcontainer {
-    color: cyan;
-    text-shadow: 0 0 5x black;
+    color: inherit;
     opacity: 0;
     margin: 5px;
+    align-items: inherit;
 }
 
 div.tech-event-subcontainer:hover {
     opacity: 1;
     transition-duration: 400ms;
+}
+
+input.tech-slider-buttons {
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+input.non-tech-slider-buttons {
+    border: none;
+    background: none;
+    color: inherit;
 }
 
 div.non-tech-event-container {
@@ -277,7 +318,7 @@ div#non-tech-dump-show-container {
 div#non-tech-anime-quiz-container {
     background: url("./images/nonTechBgs/anime_quiz.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 
@@ -300,6 +341,11 @@ div#non-tech-kollywood-trivia-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+div.non-tech-event-carousel {
+    position: relative;
+    overflow: hidden;
 }
 
 .non-tech-event-dot {
@@ -329,6 +375,9 @@ div.non-tech-event-content-slider:nth-child(1) {
 div.non-tech-event-subcontainer {
     opacity: 0;
     margin: 5px;
+    text-shadow: 0 0 5px #45ffca;
+    font-weight: 750;
+    color: #1d2b53;
 }
 
 div.non-tech-event-subcontainer:hover {
@@ -338,7 +387,6 @@ div.non-tech-event-subcontainer:hover {
 
 div.fun-event-subcontainer {
     opacity: 0;
-    margin: 5px;
 }
 
 div.fun-event-subcontainer:hover {
@@ -350,8 +398,7 @@ div.fun-event-container {
     background: url("./images/funBgs/temp.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    margin: 5px;
+    background-position: center;
 }
 
 footer {
