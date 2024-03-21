@@ -6,8 +6,9 @@
 body {
     align-items: center;
     align-content: space-around;
-    text-align: center;
     justify-content: center;
+    text-align: center;
+    margin: 5px;
 }
 
 header {
@@ -41,6 +42,8 @@ header {
     position: absolute;
     top: 35%;
     transition: ease-in 500ms;
+    padding: 0;
+    margin: 0;
 }
 
 #event-main-disc {
@@ -50,6 +53,8 @@ header {
     position: absolute;
     top: 50%;
     transition: ease-in 700ms;
+    padding: 0;
+    margin: 0;
 }
 
 nav {
@@ -91,17 +96,6 @@ button.dropbtn:hover {
 .dropdown:hover .dropdown-content {
     display: block;
     align-items: center;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 4px;
-}
-
-.grid-item {
-    padding: 5px;
-    border-radius: 2px;
 }
 
 a {
@@ -163,16 +157,19 @@ a.fun-learn-more-links:hover {
     background-color: rgba(219, 243, 5, 0.808);
 }
 
-h2.category-header {
-    font-size: 40px;
+section {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: minmax(100px, 40%);
 }
 
-div.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-    color: white;
-    text-shadow: 0 0 7px #000000, 0 0 7px #000000;
+div.sections-group {
+    display: inline-block;
+}
+
+h2.category-header {
+    font-size: 35px;
 }
 
 div.event-container {
@@ -192,14 +189,62 @@ div.tech-event-container {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    margin: 5px;
 }
 
-/* div.non-tech-event-container {
+div.tech-event-content-slider-container {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.tech-event-dot {
+    height: 10px;
+    width: 10px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.tech-event-active {
+    background-color: black;
+}
+
+div.tech-event-content-slider {
+    display: none;
+}
+
+div.tech-event-content-slider:nth-child(1) {
+    display: block;
+}
+
+div.tech-event-subcontainer {
+    color: cyan;
+    text-shadow: 0 0 5x black;
+    opacity: 0;
+    margin: 5px;
+}
+
+div.tech-event-subcontainer:hover {
+    opacity: 1;
+    transition-duration: 400ms;
+}
+
+div.non-tech-event-container {
     background: url("./images/nonTechBgs/temp.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-} */
+    margin: 5px;
+}
+
+div.non-tech-event-content-slider-container {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
 div#non-tech-ipl-auction-container {
     background: url("./images/nonTechBgs/ipl.jpg");
@@ -262,25 +307,28 @@ div#non-tech-kollywood-trivia-container {
     width: 10px;
     background-color: grey;
     border-radius: 50%;
-    display: inline-flexbox;
+    display: inline-block;
     margin: 0 5px;
     cursor: pointer;
 }
 
 .non-tech-event-active {
     background-color: black;
+    font-weight: bold;
+    text-shadow: 0 0 15px white;
 }
 
-div.non-techn-event-content-slider-container {
+div.non-tech-event-content-slider {
     display: none;
 }
 
-div.non-tech-event-content-slider-container:nth-child(1) {
-    display: flex;
+div.non-tech-event-content-slider:nth-child(1) {
+    display: block;
 }
 
 div.non-tech-event-subcontainer {
     opacity: 0;
+    margin: 5px;
 }
 
 div.non-tech-event-subcontainer:hover {
@@ -290,6 +338,7 @@ div.non-tech-event-subcontainer:hover {
 
 div.fun-event-subcontainer {
     opacity: 0;
+    margin: 5px;
 }
 
 div.fun-event-subcontainer:hover {
@@ -302,28 +351,7 @@ div.fun-event-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-}
-
-.fun-event-dot {
-    height: 10px;
-    width: 10px;
-    background-color: grey;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.fun-event-active {
-    background-color: black;
-}
-
-div.fun-event-content-slider {
-    display: none;
-}
-
-div.fun-event-content-slider:nth-child(1) {
-    display: block;
+    margin: 5px;
 }
 
 footer {

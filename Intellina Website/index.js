@@ -1,39 +1,8 @@
-var funSlideIndex = 1;
 var nonTechSlideIndex = 1;
 var techSlideIndex = 1;
 
-showFunSlides(funSlideIndex);
 showNonTechSlides(nonTechSlideIndex);
 showTechSlides(techSlideIndex);
-
-// Fun Event Content Slider
-function plusFunSlides(n) {
-    showFunSlides((funSlideIndex += n));
-}
-
-function currentFunSlide(n) {
-    showFunSlides((funSlideIndex = n));
-}
-
-function showFunSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("fun-event-content-slider");
-    var dots = document.getElementsByClassName("fun-event-dot");
-    if (n > slides.length) {
-        funSlideIndex = 1;
-    }
-    if (n < 1) {
-        funSlideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" fun-event-active", "");
-    }
-    slides[funSlideIndex - 1].style.display = "block";
-    dots[funSlideIndex - 1].className += " fun-event-active";
-}
 
 // Technical Event Content Slider
 function plusTechSlides(n) {
