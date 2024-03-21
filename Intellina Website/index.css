@@ -179,6 +179,7 @@ div.event-container {
     border-image: linear-gradient(#051367, #5d8bf4) 30;
     border-width: 2px;
     border-style: solid;
+    display: hidden;
 }
 
 h3.event-title {
@@ -193,30 +194,12 @@ div.tech-event-container {
     overflow: hidden;
 }
 
-div.tech-event-subcontainer {
-  opacity: 0;
-}
-
-div.tech-event-subcontainer:hover {
-  opacity: 1;
-  transition-duration: 600ms;
-}
-
 /* div.non-tech-event-container {
     background: url("./images/nonTechBgs/temp.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 } */
-
-div.non-tech-event-subcontainer {
-  opacity: 0;
-}
-
-div.non-tech-event-subcontainer:hover {
-  opacity: 1;
-  transition-duration: 600ms;
-}
 
 div#non-tech-ipl-auction-container {
     background: url("./images/nonTechBgs/ipl.jpg");
@@ -274,20 +257,73 @@ div#non-tech-kollywood-trivia-container {
     background-position: center;
 }
 
+.non-tech-event-dot {
+    height: 10px;
+    width: 10px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-flexbox;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.non-tech-event-active {
+    background-color: black;
+}
+
+div.non-techn-event-content-slider-container {
+    display: none;
+}
+
+div.non-tech-event-content-slider-container:nth-child(1) {
+    display: flex;
+}
+
+div.non-tech-event-subcontainer {
+    opacity: 0;
+}
+
+div.non-tech-event-subcontainer:hover {
+    opacity: 1;
+    transition-duration: 400ms;
+}
+
+div.fun-event-subcontainer {
+    opacity: 0;
+}
+
+div.fun-event-subcontainer:hover {
+    opacity: 1;
+    transition-duration: 400ms;
+}
+
 div.fun-event-container {
     background: url("./images/funBgs/temp.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 }
 
-div.fun-event-subcontainer {
-  opacity: 0;
+.fun-event-dot {
+    height: 10px;
+    width: 10px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
-div.fun-event-subcontainer:hover {
-  opacity: 1;
-  transition-duration: 600ms;
+.fun-event-active {
+    background-color: black;
+}
+
+div.fun-event-content-slider {
+    display: none;
+}
+
+div.fun-event-content-slider:nth-child(1) {
+    display: block;
 }
 
 footer {
