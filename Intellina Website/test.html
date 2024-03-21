@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Hello World</title>
+    </head>
+
+    <style>
+        .dot {
+            border-radius: 50%;
+            transition: background-color 0.6s ease;
+            background-color: grey;
+            display: inline-block;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: black;
+        }
+
+        .content-slider {
+            display: none;
+        }
+    </style>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides((slideIndex += n));
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("content-slider");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function generateRandom() {
+            document.getElementById("randNum").innerHTML = Math.floor(
+                Math.random() * 1000000001
+            );
+        }
+    </script>
+
+    <body>
+        <input type="button" onclick="generateRandom()" value="Generate" />
+        <p id="randNum">No Number Generated</p>
+
+        <div class="content-slider-container">
+            <div class="content-slider">Hello This is content 1</div>
+
+            <div class="content-slider">Hello This is content 2</div>
+
+            <div class="content-slider">Hello This is content 3</div>
+
+            <div class="content-slider">Hello This is content 4</div>
+
+            <div class="content-slider">Hello This is content 5</div>
+
+            <div class="content-slider">Hello This is content 6</div>
+
+            <div class="content-slider">Hello This is content 7</div>
+
+            <div class="content-slider">Hello This is content 8</div>
+
+            <div class="content-slider">Hello This is content 9</div>
+
+            <div class="content-slider">Hello This is content 10</div>
+
+            <input type="button" onclick="plusSlides(-1)" value="Previous" />
+            <input type="button" onclick="plusSlides(1)" value="Next" />
+        </div>
+    </body>
+</html>
